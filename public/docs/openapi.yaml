@@ -1,0 +1,1188 @@
+openapi: 3.0.3
+info:
+    title: null
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://localhost'
+paths:
+    /api/user:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/products:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Trying to get property ''id'' of non-object'
+                                    exception: ErrorException
+                                    file: /home2/laravelitccnet/public_html/itcc_proj/app/Http/Controllers/ProductController.php
+                                    line: 24
+                                    trace: [{ file: /home2/laravelitccnet/public_html/itcc_proj/app/Http/Controllers/ProductController.php, line: 24, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { function: index, class: App\Http\Controllers\ProductController, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Controller.php, line: 54, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php, line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 255, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 197, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 691, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 668, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 634, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 623, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 87, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 95, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 39, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 596, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Command/Command.php, line: 258, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 920, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 266, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 142, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Trying to get property ''id'' of non-object' }
+                                    exception: { type: string, example: ErrorException }
+                                    file: { type: string, example: /home2/laravelitccnet/public_html/itcc_proj/app/Http/Controllers/ProductController.php }
+                                    line: { type: integer, example: 24 }
+                                    trace: { type: array, example: [{ file: /home2/laravelitccnet/public_html/itcc_proj/app/Http/Controllers/ProductController.php, line: 24, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { function: index, class: App\Http\Controllers\ProductController, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Controller.php, line: 54, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php, line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 255, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Route.php, line: 197, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 691, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 668, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 634, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 623, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 87, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 95, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 39, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 596, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Command/Command.php, line: 258, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 920, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 266, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 142, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+    '/api/products/{id}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Trying to get property ''name'' of non-object (View: /home2/laravelitccnet/public_html/itcc_proj/resources/views/layouts/sidebar.blade.php)'
+                                    exception: Facade\Ignition\Exceptions\ViewException
+                                    file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/layouts/sidebar.blade.php
+                                    line: 62
+                                    trace: [{ file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/layouts/sidebar.blade.php, line: 62, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 107, function: require }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 108, function: 'Illuminate\Filesystem\{closure}', class: Illuminate\Filesystem\Filesystem, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php, line: 58, function: getRequire, class: Illuminate\Filesystem\Filesystem, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php, line: 61, function: evaluatePath, class: Illuminate\View\Engines\PhpEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php, line: 37, function: get, class: Illuminate\View\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 139, function: get, class: Facade\Ignition\Views\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 122, function: getContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 91, function: renderContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/show.blade.php, line: 53, function: render, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 107, function: require }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 108, function: 'Illuminate\Filesystem\{closure}', class: Illuminate\Filesystem\Filesystem, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php, line: 58, function: getRequire, class: Illuminate\Filesystem\Filesystem, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php, line: 61, function: evaluatePath, class: Illuminate\View\Engines\PhpEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php, line: 37, function: get, class: Illuminate\View\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 139, function: get, class: Facade\Ignition\Views\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 122, function: getContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 91, function: renderContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 62, function: render, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 34, function: setContent, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 765, function: __construct, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 737, function: toResponse, class: Illuminate\Routing\Router, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 691, function: prepareResponse, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 668, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 634, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 623, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 87, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 95, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 39, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 596, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Command/Command.php, line: 258, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 920, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 266, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 142, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Trying to get property ''name'' of non-object (View: /home2/laravelitccnet/public_html/itcc_proj/resources/views/layouts/sidebar.blade.php)' }
+                                    exception: { type: string, example: Facade\Ignition\Exceptions\ViewException }
+                                    file: { type: string, example: /home2/laravelitccnet/public_html/itcc_proj/resources/views/layouts/sidebar.blade.php }
+                                    line: { type: integer, example: 62 }
+                                    trace: { type: array, example: [{ file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/layouts/sidebar.blade.php, line: 62, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 107, function: require }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 108, function: 'Illuminate\Filesystem\{closure}', class: Illuminate\Filesystem\Filesystem, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php, line: 58, function: getRequire, class: Illuminate\Filesystem\Filesystem, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php, line: 61, function: evaluatePath, class: Illuminate\View\Engines\PhpEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php, line: 37, function: get, class: Illuminate\View\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 139, function: get, class: Facade\Ignition\Views\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 122, function: getContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 91, function: renderContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/show.blade.php, line: 53, function: render, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 107, function: require }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 108, function: 'Illuminate\Filesystem\{closure}', class: Illuminate\Filesystem\Filesystem, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php, line: 58, function: getRequire, class: Illuminate\Filesystem\Filesystem, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php, line: 61, function: evaluatePath, class: Illuminate\View\Engines\PhpEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php, line: 37, function: get, class: Illuminate\View\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 139, function: get, class: Facade\Ignition\Views\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 122, function: getContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 91, function: renderContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 62, function: render, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 34, function: setContent, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 765, function: __construct, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 737, function: toResponse, class: Illuminate\Routing\Router, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 691, function: prepareResponse, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 668, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 634, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 623, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 87, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 95, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 39, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 596, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Command/Command.php, line: 258, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 920, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 266, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 142, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+    /api/create:
+        post:
+            summary: 'Show the form for creating a new resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/edit_product/{id}':
+        get:
+            summary: 'Show the form for editing the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Undefined variable: errors (View: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/edit.blade.php)'
+                                    exception: Facade\Ignition\Exceptions\ViewException
+                                    file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/edit.blade.php
+                                    line: 72
+                                    trace: [{ file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/edit.blade.php, line: 72, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 107, function: require }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 108, function: 'Illuminate\Filesystem\{closure}', class: Illuminate\Filesystem\Filesystem, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php, line: 58, function: getRequire, class: Illuminate\Filesystem\Filesystem, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php, line: 61, function: evaluatePath, class: Illuminate\View\Engines\PhpEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php, line: 37, function: get, class: Illuminate\View\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 139, function: get, class: Facade\Ignition\Views\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 122, function: getContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 91, function: renderContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 62, function: render, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 34, function: setContent, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 765, function: __construct, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 737, function: toResponse, class: Illuminate\Routing\Router, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 691, function: prepareResponse, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 668, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 634, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 623, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 87, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 95, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 39, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 596, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Command/Command.php, line: 258, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 920, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 266, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 142, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Undefined variable: errors (View: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/edit.blade.php)' }
+                                    exception: { type: string, example: Facade\Ignition\Exceptions\ViewException }
+                                    file: { type: string, example: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/edit.blade.php }
+                                    line: { type: integer, example: 72 }
+                                    trace: { type: array, example: [{ file: /home2/laravelitccnet/public_html/itcc_proj/resources/views/products/edit.blade.php, line: 72, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 107, function: require }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php, line: 108, function: 'Illuminate\Filesystem\{closure}', class: Illuminate\Filesystem\Filesystem, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php, line: 58, function: getRequire, class: Illuminate\Filesystem\Filesystem, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php, line: 61, function: evaluatePath, class: Illuminate\View\Engines\PhpEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php, line: 37, function: get, class: Illuminate\View\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 139, function: get, class: Facade\Ignition\Views\Engines\CompilerEngine, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 122, function: getContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/View/View.php, line: 91, function: renderContents, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 62, function: render, class: Illuminate\View\View, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Http/Response.php, line: 34, function: setContent, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 765, function: __construct, class: Illuminate\Http\Response, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 737, function: toResponse, class: Illuminate\Routing\Router, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 691, function: prepareResponse, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php, line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php, line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 693, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 668, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 634, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 623, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 87, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: call_user_func_array }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 95, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 39, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 596, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Command/Command.php, line: 258, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 920, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 266, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/symfony/console/Application.php, line: 142, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /home2/laravelitccnet/public_html/itcc_proj/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+    '/api/update_product/{id}':
+        post:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/delete/{id}':
+        get:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                302:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://localhost/products'\" />\n\n        <title>Redirecting to http://localhost/products</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://localhost/products\">http://localhost/products</a>.\n    </body>\n</html>"
+            tags:
+                - Endpoints
+            security: []
+    /:
+        get:
+            summary: 'Show the application dashboard.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /login:
+        get:
+            summary: 'Show the application''s login form.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!--  -->\n\n\n\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n  <title>Product Manager | Log in</title>\r\n  <!-- Tell the browser to be responsive to screen width -->\r\n  <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">\r\n  <!-- Bootstrap 3.3.6 -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/bootstrap/css/bootstrap.min.css\">\r\n  <!-- Font Awesome -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/fonts-icons/font-awesome.min.css\">\r\n  <!-- Ionicons -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/fonts-icons/ionicons.min.css\">\r\n  <!-- Theme style -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/dist/css/AdminLTE.min.css\">\r\n  <!-- iCheck -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/plugins/iCheck/square/blue.css\">\r\n\r\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\r\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\r\n  <!--[if lt IE 9]>\r\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\r\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\r\n  <![endif]-->\r\n</head>\r\n<body class=\"hold-transition login-page\">\r\n\r\n\r\n \r\n\r\n<!-- jQuery 2.2.3 -->\r\n<script src=\"/itcc_proj/public/plugins/jQuery/jquery-2.2.3.min.js\"></script>\r\n<!-- Bootstrap 3.3.6 -->\r\n<script src=\"/itcc_proj/public/bootstrap/js/bootstrap.min.js\"></script>\r\n<!-- iCheck -->\r\n<script src=\"/itcc_proj/public/plugins/iCheck/icheck.min.js\"></script>\r\n<script>\r\n  $(function () {\r\n    $('input').iCheck({\r\n      checkboxClass: 'icheckbox_square-blue',\r\n      radioClass: 'iradio_square-blue',\r\n      increaseArea: '20%' // optional\r\n    });\r\n  });\r\n</script>\r\n</body>\r\n</html>\r\n<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n</head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                    <li class=\"nav-item\">\n                                <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                            </li>\n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            \n  <div class=\"login-logo\">\n    <a href=\"index2.html\"><b>Product Manager</b></a>\n  </div>\n  <!-- /.login-logo -->\n\n<div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Login</div>\n\n                <div class=\"card-body\">\n                    <form method=\"POST\" action=\"http://localhost/login\">\n                        <input type=\"hidden\" name=\"_token\" value=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password\" class=\"col-md-4 col-form-label text-md-right\">Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password\" type=\"password\" class=\"form-control \" name=\"password\" required autocomplete=\"current-password\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <div class=\"form-check\">\n                                    <input class=\"form-check-input\" type=\"checkbox\" name=\"remember\" id=\"remember\" >\n\n                                    <label class=\"form-check-label\" style=\"margin-left: 20px;\" for=\"remember\">\n                                        Remember Me\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-8 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Login\n                                </button>\n\n                                                                    <a class=\"btn btn-link\" href=\"http://localhost/password/reset\">\n                                        Forgot Your Password?\n                                    </a>\n                                                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n <!-- /.login-box-body -->\n \n        </main>\n    </div>\n</body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Handle a login request to the application.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /logout:
+        post:
+            summary: 'Log the user out of the application.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /register:
+        get:
+            summary: 'Show the application registration form.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!--  -->\n\n\n\n\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n  <title>Product Manager | Log in</title>\r\n  <!-- Tell the browser to be responsive to screen width -->\r\n  <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">\r\n  <!-- Bootstrap 3.3.6 -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/bootstrap/css/bootstrap.min.css\">\r\n  <!-- Font Awesome -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/fonts-icons/font-awesome.min.css\">\r\n  <!-- Ionicons -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/fonts-icons/ionicons.min.css\">\r\n  <!-- Theme style -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/dist/css/AdminLTE.min.css\">\r\n  <!-- iCheck -->\r\n  <link rel=\"stylesheet\" href=\"/itcc_proj/public/plugins/iCheck/square/blue.css\">\r\n\r\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\r\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\r\n  <!--[if lt IE 9]>\r\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\r\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\r\n  <![endif]-->\r\n</head>\r\n<body class=\"hold-transition login-page\">\r\n\r\n\r\n \r\n\r\n<!-- jQuery 2.2.3 -->\r\n<script src=\"/itcc_proj/public/plugins/jQuery/jquery-2.2.3.min.js\"></script>\r\n<!-- Bootstrap 3.3.6 -->\r\n<script src=\"/itcc_proj/public/bootstrap/js/bootstrap.min.js\"></script>\r\n<!-- iCheck -->\r\n<script src=\"/itcc_proj/public/plugins/iCheck/icheck.min.js\"></script>\r\n<script>\r\n  $(function () {\r\n    $('input').iCheck({\r\n      checkboxClass: 'icheckbox_square-blue',\r\n      radioClass: 'iradio_square-blue',\r\n      increaseArea: '20%' // optional\r\n    });\r\n  });\r\n</script>\r\n</body>\r\n</html>\r\n<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n</head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                    <li class=\"nav-item\">\n                                <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                            </li>\n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Register</div>\n\n                <div class=\"card-body\">\n                    <form method=\"POST\" action=\"http://localhost/register\">\n                        <input type=\"hidden\" name=\"_token\" value=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n                        <div class=\"form-group row\">\n                            <label for=\"name\" class=\"col-md-4 col-form-label text-md-right\">Name</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"name\" type=\"text\" class=\"form-control \" name=\"name\" value=\"\" required autocomplete=\"name\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password\" class=\"col-md-4 col-form-label text-md-right\">Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password\" type=\"password\" class=\"form-control \" name=\"password\" required autocomplete=\"new-password\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password-confirm\" class=\"col-md-4 col-form-label text-md-right\">Confirm Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password-confirm\" type=\"password\" class=\"form-control\" name=\"password_confirmation\" required autocomplete=\"new-password\">\n                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Register\n                                </button>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n</body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Handle a registration request for the application.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /password/reset:
+        get:
+            summary: 'Display the form to request a password reset link.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n</head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                    <li class=\"nav-item\">\n                                <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                            </li>\n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Reset Password</div>\n\n                <div class=\"card-body\">\n                    \n                    <form method=\"POST\" action=\"http://localhost/password/email\">\n                        <input type=\"hidden\" name=\"_token\" value=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Send Password Reset Link\n                                </button>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n</body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Reset the given user''s password.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /password/email:
+        post:
+            summary: 'Send a reset link to the given user.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/password/reset/{token}':
+        get:
+            summary: 'Display the password reset view for the given token.'
+            description: 'If no token is present, display the link request form.'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n</head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                    <li class=\"nav-item\">\n                                <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                            </li>\n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Reset Password</div>\n\n                <div class=\"card-body\">\n                    <form method=\"POST\" action=\"http://localhost/password/reset\">\n                        <input type=\"hidden\" name=\"_token\" value=\"3QXQm6S3uyf6ynEmxhlxiJfahWiNXp4rt3WqOMfl\">\n                        <input type=\"hidden\" name=\"token\" value=\"{token}\">\n\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password\" class=\"col-md-4 col-form-label text-md-right\">Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password\" type=\"password\" class=\"form-control \" name=\"password\" required autocomplete=\"new-password\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password-confirm\" class=\"col-md-4 col-form-label text-md-right\">Confirm Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password-confirm\" type=\"password\" class=\"form-control\" name=\"password_confirmation\" required autocomplete=\"new-password\">\n                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Reset Password\n                                </button>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n</body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+    /password/confirm:
+        get:
+            summary: 'Display the password confirmation view.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Confirm the given user''s password.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /home:
+        get:
+            summary: 'Show the application dashboard.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /roles:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /roles/create:
+        get:
+            summary: 'Show the form for creating a new resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/roles/{role}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/roles/{role}/edit':
+        get:
+            summary: 'Show the form for editing the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /users:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /users/create:
+        get:
+            summary: 'Show the form for creating a new resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/users/{user}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/users/{user}/edit':
+        get:
+            summary: 'Show the form for editing the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /products:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /products/create:
+        get:
+            summary: 'Show the form for creating a new resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/products/{product}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/products/{product}/edit':
+        get:
+            summary: 'Show the form for editing the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []

@@ -1,0 +1,7 @@
+[19-Oct-2020 12:48:35 UTC] PHP Warning:  phpinfo(): Invalid date.timezone value '= 'Australia/Melbourne'', we selected the timezone 'UTC' for now. in /home2/laravelitccnet/public_html/itcc_proj/phpinfo.php on line 1
+[19-Oct-2020 12:48:35 UTC] PHP Warning:  date(): Invalid date.timezone value '= 'Australia/Melbourne'', we selected the timezone 'UTC' for now. in /home2/laravelitccnet/public_html/itcc_proj/phpinfo.php on line 3
+[19-Oct-2020 12:48:35 UTC] PHP Warning:  date(): Invalid date.timezone value '= 'Australia/Melbourne'', we selected the timezone 'UTC' for now. in /home2/laravelitccnet/public_html/itcc_proj/phpinfo.php on line 3
+[19-Oct-2020 12:52:31 UTC] PHP Warning:  phpinfo(): Invalid date.timezone value '= 'Australia/Melbourne'', we selected the timezone 'UTC' for now. in /home2/laravelitccnet/public_html/itcc_proj/phpinfo.php on line 1
+[19-Oct-2020 12:52:31 UTC] PHP Warning:  date(): Invalid date.timezone value '= 'Australia/Melbourne'', we selected the timezone 'UTC' for now. in /home2/laravelitccnet/public_html/itcc_proj/phpinfo.php on line 3
+[19-Oct-2020 12:52:31 UTC] PHP Warning:  date(): Invalid date.timezone value '= 'Australia/Melbourne'', we selected the timezone 'UTC' for now. in /home2/laravelitccnet/public_html/itcc_proj/phpinfo.php on line 3
+[19-Oct-2020 14:38:30 UTC] PHP Fatal error:  Allowed memory size of 1610612736 bytes exhausted (tried to allocate 4096 bytes) in phar:///opt/cpanel/composer/bin/composer/src/Composer/DependencyResolver/Solver.php on line 223

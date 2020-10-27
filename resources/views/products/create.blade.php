@@ -2,15 +2,6 @@
 
 @section('content')
 
-    <section class="content-header">
-      <h1>
-      Products Lists
-        <small></small>
-      </h1>
-   
-      
-    </section>
-
     <!-- Main content -->
     <section class="content">
 
@@ -18,49 +9,33 @@
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Add New Product </h2>
+                <span>Fields with * are required</span>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
             </div>
         </div>
     </div>
-
+    
+     <!-- Error Handling -->
+    @if (session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
 
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Whoops!</strong> Fix the problem with your input.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
-    @endif
+    @endif 
+    <!-- Error Handling -->
 
-
-    <form action="{{ route('products.store') }}" method="POST">
-    	@csrf
-        <!-- <script>
-        jQuery(document).ready(function(){
-            jQuery("#sel1").change(function() {
-            var name = $(this).val();
-
-    jQuery.ajax({
-            type: 'GET',                           
-            data:{name : name},
-            dataType:'json',                
-            success: function(response)
-            {
-                alert("success");
-                //jQuery('#sel2').text('name : ' + response);
-               
-                
-            }
-        });  
-});+
-});        
- </script> -->
- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Javascript Validations -->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <script>
         jQuery(document).ready(function(){
             jQuery("#sel1").change(function() {
@@ -79,37 +54,67 @@
         });  
 });
 });
-</script>  
 
+function validateForm() {
+  var x = document.forms["form1"]["name"].value;
+  var y = document.forms["form1"]["price"].value;
+  var z = document.forms["form1"]["quantity"].value;
+  
+  if( x == ""  )
+  {
+     text1 = "Product name is required";
+    document.getElementById("error1").innerHTML = text1;
+  }
+  
+  
+  else if( y == "" || isNaN( y )  )
+  {
+     text2 = "Price value is required and it should be a Integer";
+     document.getElementById("error2").innerHTML = text2;
+  }
+  
+  else if( z == "" || isNaN( z )  )
+  {
+     text3 = "Quantity value is required";
+     document.getElementById("error3").innerHTML = text3;
+  }
+  
+}
+</script> 
 
-         <div class="row">         
-         
+<!-- Javascript Validations -->
 
-         
-		    <div class="col-xs-12 col-sm-12 col-md-12">
+<!-- Form to create the products -->
+    <form name="form1" action="{{ route('products.store') }}" method="POST" onsubmit="return validateForm()">
+    	@csrf
+         <div class="row">     
+         	<div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
-		            <strong>Name:</strong>
-		            <input type="text" name="name" class="form-control" placeholder="Name">
+		            <strong>*Name:</strong>
+		            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
 		        </div>
+		        <p id="error1"></p>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
-		            <strong>Price:</strong>
-		            <input type="text" name="price" class="form-control" placeholder="Price">
+		            <strong>*Price:</strong>
+		            <input type="text" name="price" class="form-control" placeholder="Price" value="{{ old('price') }}">
 		        </div>
+		        <p id="error2"></p>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
-		            <strong>Quantity:</strong>
-		            <input type="text" name="quantity" class="form-control" placeholder="Quantity">
+		            <strong>*Quantity:</strong>
+		            <input type="text" name="quantity" class="form-control" placeholder="Quantity" value="{{ old('quantity') }}">
 		        </div>
+		        <p id="error3"></p>
 		    </div>
             <!-- CATGEORY AND SUBCTAEGORY SECTION-->
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong></strong>		            
-                    <label for="sel1">Main Categories:</label>
-                    <select class="form-control" id="sel1" name="category" >
+                    <label for="sel1">*Main Categories:</label>
+                    <select class="form-control" id="sel1" name="category" value="{{ old('category') }}">
                         <option value='' selected="selected">Choose a category</option>
                         <?php
                         // A sample product array
@@ -121,8 +126,8 @@
                         }
                         ?>
                     </select>
-
                 </div>
+                <p id="error4"></p>
             </div>
 
 
@@ -130,13 +135,12 @@
                             <div class="form-group">
                                 <strong></strong>
                                 
-                                <label for="sel2">Sub Categories:</label>
+                                <label for="sel2">*Sub Categories:</label>
+                                <span>(Select a Main category first to select a subcategory)</span>
 
-                    <select class="form-control" id="sel2" name="subcategory" >
+                    <select class="form-control" id="sel2" name="subcategory" value="{{ old('subcategory') }}">
                     <option value='' >Choose a Subcategory</option>
-                
                 </select>
-
             </div>
             </div>
              <!-- CATGEORY AND SUBCTAEGORY SECTION-->
@@ -152,10 +156,8 @@
 		            <button type="submit" class="btn btn-primary">Submit</button>
 		    </div>
 		</div>
-
-
     </form>
-
+<!-- Form to create the products -->
         
         
       </div>

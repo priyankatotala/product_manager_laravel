@@ -7,22 +7,12 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 
 class ProductController extends Controller
 { 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-         $this->middleware('permission:product-list');
-         $this->middleware('permission:product-create', ['only' => ['create','store']]);
-         $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:product-delete', ['only' => ['destroy']]);
-    }
+   
     /**
      * Display a listing of the resource.
      *
@@ -30,9 +20,16 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
+        
+        $user =  Auth::user()->id ;
+        $rows = DB::table('products')->where('user_id', 'LIKE', $user )->get();
+        $count = count($rows);
+        $products = Product::latest()->where('user_id', 'LIKE', $user )->paginate($count);
         return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+        // date_default_timezone_set("Australia/Melbourne");
+        // $zone = getdate();
+        // print_r($zone); die();
     }
 
 
@@ -56,7 +53,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        
+        try{
         request()->validate([
             'name' => 'required',
             'category' => 'required',
@@ -67,6 +64,10 @@ class ProductController extends Controller
 
 
         Product::create($request->all());
+        }
+        catch (\Exception $exception) {
+        return back()->withError('The value you have entered is invalid format. Enter a valid value in this field.')->withInput();
+        }
 
 
         return redirect()->route('products.index')
@@ -84,6 +85,7 @@ class ProductController extends Controller
     {
         return view('products.show',compact('product'));
     }
+     
 
 
     /**
@@ -107,16 +109,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        try{
          request()->validate([
-            'name' => 'required',
-            'category' => 'required',
-            'subcategory' => 'required',
+            'name' => 'required', 
             'price' => 'required',
             'quantity' => 'required',
+            'category' => 'required',
+            'subcategory' => 'required',
         ]);
 
 
         $product->update($request->all());
+        }
+        catch (\Exception $exception) {
+        return back()->withError('The value you have entered is invalid format. Enter a valid value in this field.')->withInput();
+        }
 
 
         return redirect()->route('products.index')

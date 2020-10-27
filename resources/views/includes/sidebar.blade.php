@@ -14,28 +14,27 @@
           
         </div>
       </div>
-      
+      @if (Auth::user()->name  == "Priya1")
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header"></li>
+        
+        
         <li class="">
           <a href="http://127.0.0.1:8000/products">
             <i class="fa fa-cube"></i> <span>PRODUCTS</span>
-            
           </a>
       
         </li>
-
+        
         <li class="">
           <a href="http://127.0.0.1:8000/users">
             <i class="fa fa-user"></i> <span>USERS</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
          
         </li>
-
+        @endif
+    
 
 
       

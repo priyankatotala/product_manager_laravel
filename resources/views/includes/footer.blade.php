@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b><a href="http://www.fb.com/softsed">Product Manager</a></b> 
+      <b><a href="http://127.0.0.1:8000/">Product Manager</a></b> 
     </div>
-    <strong> <a href="http://almsaeedstudio.com">Copyrights - ITCC</a></strong> 
+    <strong> <a href="http://127.0.0.1:8000/">Copyrights - ITCC</a></strong> 
   </footer>
 
  
@@ -24,6 +24,7 @@
   <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
   <script>
 $(document).ready(function() {
-    $('#example').DataTable();
+    $('#table1').DataTable();
+    $('#table2').DataTable();
 } );
 </script>

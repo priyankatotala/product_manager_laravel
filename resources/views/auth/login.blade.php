@@ -4,7 +4,7 @@
 @section('content')
 
   <div class="login-logo">
-    <a href="index2.html"><b>Product Manager</b></a>
+    <a href="https://laravel.itcc.net.au/itcc_proj/public"><b>Product Manager</b></a>
   </div>
   <!-- /.login-logo -->
 
@@ -12,9 +12,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header"></div>
 
-                <div class="card-body">
+                <div class="card-body ">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -49,9 +49,9 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="form-check-input"  type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label"  for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>

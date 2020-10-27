@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Auth;
-use DB;
-use App\Product;
 
 use Illuminate\Http\Request;
+use App\Product;
+use Illuminate\Support\Facades\DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -27,14 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         //return view('home');
-        //return view('home');
-
-        // $rows = DB::table('products')->get();
-        // $count = count($rows);
-        // $products = Product::latest()->paginate($count);
-        // return view('home',compact('products'))
-        // ->with('i', (request()->input('page', 1) - 1) * 5);
-
+        
+        
         $user1 =  Auth::user()->id ;
         $rows1 = DB::table('products')->where('user_id', 'LIKE', $user1 )->get();
         $count1 = count($rows1);
@@ -42,8 +36,5 @@ class HomeController extends Controller
         return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
             
-
     }
-
-  
 }

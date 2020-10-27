@@ -15,7 +15,7 @@ class Product extends Model
      * @var array
      */
     //public $timestamps = false;
-    
+    protected $guard_name = 'guard';
     protected $fillable = [
         'name', 'price', 'quantity', 'category', 'user_id', 'subcategory'
     ];
