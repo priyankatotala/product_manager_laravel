@@ -1,5 +1,5 @@
 <!-- @extends('layouts.app') -->
-@extends('layouts.sidebar')
+@extends('layouts.master')
 
 
 @section('content')

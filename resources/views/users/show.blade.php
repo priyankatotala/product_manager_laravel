@@ -1,5 +1,5 @@
 
-@extends('layouts.sidebar')
+@extends('layouts.master')
 
 
 @section('content')
