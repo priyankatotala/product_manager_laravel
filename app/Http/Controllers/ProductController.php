@@ -25,7 +25,9 @@ class ProductController extends Controller
         $rows = DB::table('products')->where('user_id', 'LIKE', $user )->get();
         $count = count($rows);
         $products = Product::latest()->where('user_id', 'LIKE', $user )->paginate($count);
-        return view('products.index',compact('products'))
+        //return view('products.index',compact('products'))->with('i', (request()->input('page', 1) - 1) * 5);
+        // View to display modal box
+        return view('products.index1',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         // date_default_timezone_set("Australia/Melbourne");
         // $zone = getdate();
@@ -83,7 +85,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show',compact('product'));
+        return view('products.show1',compact('product'));
     }
      
 
@@ -96,7 +98,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit',compact('product'));
+        //return view('products.edit1',compact('product'));
+        // View to display modal box
+        return view('products.edit1',compact('product'));
     }
 
 

@@ -62,7 +62,7 @@
             <td>{{ $product->subcategory }}</td>
             
             <td>{{ $product->updated_at }}</td>
-           <!-- <td> {{ Timezone::convertToLocal($product->updated_at) }} </td>  -->
+           
 	        <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
