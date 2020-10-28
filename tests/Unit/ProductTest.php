@@ -26,5 +26,6 @@ class ProductTest extends TestCase
          ->type('subcat3', 'subcategory')         
          ->press('submit')
          ->seePageIs('/products');
+         
 }
 }
