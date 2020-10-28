@@ -33,7 +33,7 @@ class HomeController extends Controller
         $rows1 = DB::table('products')->where('user_id', 'LIKE', $user1 )->get();
         $count1 = count($rows1);
         $products = Product::latest()->where('user_id', 'LIKE', $user1 )->paginate($count1);
-        return view('products.index',compact('products'))
+        return view('home',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
             
     }
