@@ -19,10 +19,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/products', 'ProductController@index');
-Route::get('/products/{id}', 'ProductController@show');
-Route::post('/create', 'ProductController@create');
+//Route::get('/products', 'ProductController@index');
+//Route::get('/products/{id}', 'ProductController@show');
+//Route::post('/create', 'ProductController@create');
 Route::get('/edit_product/{id}', 'ProductController@edit');
 Route::post('/update_product/{id}', 'ProductController@update');
 Route::any('/delete/{id}', 'ProductController@destroy');
+
+Route::get('/products', 'ProductController@getAllProducts');
+Route::get('/products/{id}', 'ProductController@getProduct');
+Route::post('/create', 'ProductController@createProduct');
+
 

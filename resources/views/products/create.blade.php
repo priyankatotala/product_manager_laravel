@@ -87,6 +87,8 @@ function validateForm() {
 <!-- Form to create the products -->
     <form name="form1" action="{{ route('products.store') }}" method="POST" onsubmit="return validateForm()">
     	@csrf
+        @method('PUT')
+        
          <div class="row">     
          	<div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">

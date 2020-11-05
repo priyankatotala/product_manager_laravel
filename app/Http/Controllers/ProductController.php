@@ -149,4 +149,32 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
+
+    public function getAllProducts() {
+        $products = Product::get()->toJson(JSON_PRETTY_PRINT);
+        return response($products, 200);
+      }
+
+      public function getProduct($id) {
+        if (Product::where('id', $id)->exists()) {
+            $product = Product::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($product, 200);
+          } else {
+            return response()->json([
+              "message" => "Product not found"
+            ], 404);
+          }
+      }
+      public function createProduct(Request $request) {
+        // $product = new Product;
+        // $product->name = $request->name;
+        // $product->course = $request->course;
+        // $product->save();
+        Product::create($request->all());
+    
+        return response()->json([
+            "message" => "product record created"
+        ], 201);
+      }
+
 }
